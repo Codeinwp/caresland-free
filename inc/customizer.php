@@ -21,7 +21,7 @@ function codeinwp_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'codeinwp_theme_notes' , array(
 		'title'      => __('ThemeIsle theme notes','codeinwp'),
 		'description' => sprintf( __( "Thank you for being part of this! We've spent almost 6 months building ThemeIsle without really knowing if anyone will ever use a theme or not, so we're very grateful that you've decided to work with us. Wanna <a href='http://themeisle.com/contact/' target='_blank'>say hi</a>?
-		<br/><br/><a href='http://themeisle.com/demo/?theme=Caresland' target='_blank' />View Theme Demo</a> | <a href='http://themeisle.com/forums/forum/caresland/' target='_blank'>Get theme support</a>")),
+		<br/><br/><a href='http://themeisle.com/demo/?theme=Caresland Free' target='_blank' />View Theme Demo</a> | <a href='http://themeisle.com/forums/forum/caresland/' target='_blank'>Get theme support</a>")),
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
@@ -96,12 +96,10 @@ class Example_Customize_Textarea_Control extends WP_Customize_Control {
     }
 }
 endif;
-
-
-
-
-
-
-
-
-
+/**
+ * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function cwp_customize_preview_js() {
+	wp_enqueue_script( 'customizerJS', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '20131205', true );
+}
+add_action( 'customize_preview_init', 'cwp_customize_preview_js' );

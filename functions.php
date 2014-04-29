@@ -234,3 +234,11 @@ function cwp_add_editor_styles() {
     add_editor_style( '/css/custom-editor-style.css' );
 }
 add_action( 'init', 'cwp_add_editor_styles' );
+
+add_action( 'customize_controls_print_scripts', 'add_customizer_button' );
+
+function add_customizer_button()
+{
+    wp_register_script( 'cwp_customizer_script', get_template_directory_uri().'/js/customizer_button.js', array('jquery'), 'v1.0', true);
+    wp_enqueue_script( 'cwp_customizer_script' );
+}
