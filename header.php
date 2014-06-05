@@ -23,18 +23,23 @@
         <!-- [begin] header -->
         <header>
 			
-        	<div class="container">
-				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+        	<div class="container">			
+				<?php $header_img_url = get_header_image(); ?>
+				
+				<?php if (!empty($header_img_url)) : ?>
+					<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+				<?php endif; ?>
+				
  				<div class="logo">
 					<?php if ( get_theme_mod( 'codeinwp_logo' ) ) : ?>
                         <div class='site-logo'>
                             <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo get_theme_mod( 'codeinwp_logo' ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
                         </div>
                     <?php else : ?>
-                        <hgroup>
+                        <div> <!-- was hgroup -->
                             <h1 class='site-title'><a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php bloginfo( 'name' ); ?></a></h1>
                             <h2 class='site-description'><?php bloginfo( 'description' ); ?></h2>
-                        </hgroup>
+                        </div>
                     <?php endif; ?>
                 </div><!-- .logo -->
 
