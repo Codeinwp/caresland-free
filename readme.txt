@@ -1,18 +1,18 @@
-= Caresland =
+= Caresland Lite =
 
-Author: codeinwp
+Author: themeisle
 
 Tags: orange, yellow, green, gray, light, one-column, right-sidebar, responsive-layout, custom-background, custom-header, editor-style, featured-images, sticky-post, threaded-comments, translation-ready
 
 Requires at least:	3.3.0
 
-Tested up to:		3.9.1
+Tested up to:		3.9
 
-Caresland
+Caresland Lite
 
 == Description ==
 
-Caresland is a a easily customizable WordPress Theme designed for kindergartens or other websites about activities with children.
+Caresland Lite is a a easily customizable WordPress Theme designed for kindergartens or other websites about activities with children.
 
 = License =
 
