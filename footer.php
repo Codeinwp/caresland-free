@@ -58,7 +58,7 @@
             </div><!-- .site-info -->
 			<div class="clear"></div>
 			<div class="poweredby">
-				<a href="http://themeisle.com/themes/caresland/?utm_source=caresland&amp;utm_medium=link&amp;utm_campaign=themefooter" target="_blank">Caresland</a> powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>
+				<a href="http://themeisle.com/themes/caresland/" target="_blank">Caresland</a> powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>
 			</div>
 
     	</div><!-- .container -->
