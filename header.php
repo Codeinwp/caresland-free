@@ -39,37 +39,13 @@
                     <?php endif; ?>
                 </div><!-- .logo -->
 
-            <?php if( get_theme_mod( 'codeinwp_social_link_fb' ) || get_theme_mod( 'codeinwp_social_link_tw' ) || get_theme_mod( 'codeinwp_social_link_gp' ) || get_theme_mod( 'codeinwp_social_link_in' ) || get_theme_mod( 'codeinwp_social_link_yo' ) ): ?>
-
-              <div class="header-right">
-                    <div class="header-social">
-	                    <?php if ( get_theme_mod( 'codeinwp_social_link_fb' ) ) : ?>
-                    		<a href="<?php echo get_theme_mod( 'codeinwp_social_link_fb' ); ?>" class="fb-icon" title="Facebook" target="_blank"></a>
-                        <?php endif; ?>
-	                    <?php if ( get_theme_mod( 'codeinwp_social_link_tw' ) ) : ?>
-                    		<a href="<?php echo get_theme_mod( 'codeinwp_social_link_tw' ); ?>" class="tw-icon" title="Twitter" target="_blank"></a>
-                        <?php endif; ?>
-                        <?php if ( get_theme_mod( 'codeinwp_social_link_gp' ) ) : ?>
-                    		<a href="<?php echo get_theme_mod( 'codeinwp_social_link_fgp' ); ?>" class="gp-icon" title="Google+" target="_blank"></a>
-                        <?php endif; ?>
-                        <?php if ( get_theme_mod( 'codeinwp_social_link_in' ) ) : ?>
-                    		<a href="<?php echo get_theme_mod( 'codeinwp_social_link_in' ); ?>" class="in-icon" title="Linkedin" target="_blank"></a>
-                        <?php endif; ?>
-                        <?php if ( get_theme_mod( 'codeinwp_social_link_yo' ) ) : ?>
-                    		<a href="<?php echo get_theme_mod( 'codeinwp_social_link_yo' ); ?>" class="yo-icon" title="Youtube" target="_blank"></a>
-                        <?php endif; ?>
-                    </div><!-- .header-social -->
-                </div><!-- .header-right -->
-            
-            <?php endif; ?>
-
             </div><!-- .container -->
             
             <div class="main-menu-wrap">
             	<div class="container">
                                
                 	<div class="main-navigation">
-						<?php wp_nav_menu( array( 'theme_location' => 'my-primary', 'container' => false, 'fallback_cb' => false ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'my-primary', 'container' => false ) ); ?>
                     </div>
                    
                 </div><!-- .container -->

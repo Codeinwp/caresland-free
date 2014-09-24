@@ -18,7 +18,7 @@ if(isset($_POST['submitted'])) {
 
         if(trim($_POST['contactName']) === '') {
 
-               $nameError = __('Please enter your name.','codeinwp');;
+               $nameError = __('Please enter your name.','caresland-lite');;
 
                $hasError = true;
 
@@ -32,7 +32,7 @@ if(isset($_POST['submitted'])) {
 
          if(trim($_POST['contactPhone']) === '') {
 
-               $phoneError = __('Please enter your phone number.','codeinwp');;
+               $phoneError = __('Please enter your phone number.','caresland-lite');;
 
                $hasError = true;
 
@@ -46,13 +46,13 @@ if(isset($_POST['submitted'])) {
 
         if(trim($_POST['email']) === '')  {
 
-               $emailError = __('Please enter your email address.','codeinwp');;
+               $emailError = __('Please enter your email address.','caresland-lite');;
 
                $hasError = true;
 
         } else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) {
 
-               $emailError = __('You entered an invalid email address.','codeinwp');
+               $emailError = __('You entered an invalid email address.','caresland-lite');
 
                $hasError = true;
 
@@ -66,7 +66,7 @@ if(isset($_POST['submitted'])) {
 
         if(trim($_POST['comments']) === '') {
 
-               $commentError = __('Please enter a message.','codeinwp');;
+               $commentError = __('Please enter a message.','caresland-lite');;
 
                $hasError = true;
 
@@ -170,7 +170,7 @@ if(isset($_POST['submitted'])) {
 
                                                       <div>
 
-                                                             <p><?php echo __('Thanks, your email was sent successfully.','codeinwp'); ?></p>
+                                                             <p><?php echo __('Thanks, your email was sent successfully.','caresland-lite'); ?></p>
 
                                                       </div>
 
@@ -186,7 +186,7 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                        	<label for="i1"><?php _e('Name*:','codeinwp'); ?></label>
+                                        	<label for="i1"><?php _e('Name*:','caresland-lite'); ?></label>
 
 
 
@@ -202,7 +202,7 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                            <label for="i2"><?php echo __('Phone*:','codeinwp'); ?></label>
+                                            <label for="i2"><?php echo __('Phone*:','caresland-lite'); ?></label>
 
 
 
@@ -218,7 +218,7 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                            <label for="i3"><?php echo __('Email*:','codeinwp'); ?></label>
+                                            <label for="i3"><?php echo __('Email*:','caresland-lite'); ?></label>
 
 
 
@@ -242,7 +242,7 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                            <label for="i4"><?php echo __('Message:','codeinwp'); ?></label>
+                                            <label for="i4"><?php echo __('Message:','caresland-lite'); ?></label>
 
 
 
