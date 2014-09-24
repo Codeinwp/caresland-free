@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package codeinwp
+ * @package caresland-lite
  */
 
 get_header(); ?>

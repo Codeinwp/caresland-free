@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package codeinwp
+ * @package caresland-lite
  */
 
 get_header(); ?>
@@ -17,7 +17,7 @@ get_header(); ?>
         <div class="full-content-body ">
             <div class="container">
 
-                <h1><?php _e('Blog','codeinwp'); ?></h1>
+                <h1><?php _e('Blog','caresland-lite'); ?></h1>
                 
                 <div id="primary" class="blog-content-wrap">
                 
@@ -39,10 +39,10 @@ get_header(); ?>
 						<?php endwhile; ?>
 
 						<?php 
-							if (function_exists("cwp_pagination")) {
-								cwp_pagination();
+							if (function_exists("caresland_lite_pagination")) {
+								caresland_lite_pagination();
 							} else{
-								codeinwp_paging_nav();
+								caresland_lite_paging_nav();
 							} 
 						?>
 

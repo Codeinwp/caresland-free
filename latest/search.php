@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package codeinwp
+ * @package caresland-lite
  */
 
 get_header(); ?>
@@ -19,7 +19,7 @@ get_header(); ?>
 						<?php if ( have_posts() ) : ?>
 
 							<header class="page-header">
-								<h1 class="page-title"><?php printf( __( 'Search results for: %s', 'codeinwp' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+								<h1 class="page-title"><?php printf( __( 'Search results for: %s', 'caresland-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 							</header><!-- .page-header -->
 
 
@@ -31,10 +31,10 @@ get_header(); ?>
 							<?php endwhile; ?>
 
 							<?php 
-								if (function_exists("cwp_pagination")) {
-									cwp_pagination();
+								if (function_exists("caresland_lite_pagination")) {
+									caresland_lite_pagination();
 								} else{
-									codeinwp_paging_nav();
+									caresland_lite_paging_nav();
 								} 
 							?>
 

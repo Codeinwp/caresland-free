@@ -1,8 +1,8 @@
 <?php
 /**
- * codeinwp Theme Customizer
+ * caresland-lite Theme Customizer
  *
- * @package codeinwp
+ * @package caresland-lite
  */
 
 /**
@@ -11,6 +11,17 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function codeinwp_customize_register( $wp_customize ) {
+
+	class caresland_lite_Theme_Support extends WP_Customize_Control
+	{
+		public function render_content()
+		{
+
+		}
+
+	} 
+
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -19,32 +30,31 @@ function codeinwp_customize_register( $wp_customize ) {
 
 	/* theme notes */
 	$wp_customize->add_section( 'codeinwp_theme_notes' , array(
-		'title'      => __('ThemeIsle theme notes','codeinwp'),
+		'title'      => __('ThemeIsle theme notes','caresland-lite'),
 		'description' => sprintf( __( "Thank you for being part of this! We've spent almost 6 months building ThemeIsle without really knowing if anyone will ever use a theme or not, so we're very grateful that you've decided to work with us. Wanna <a href='http://themeisle.com/contact/' target='_blank'>say hi</a>?
 		<br/><br/><a href='http://themeisle.com/demo/?theme=Caresland Free' target='_blank' />View Theme Demo</a> | <a href='http://themeisle.com/forums/forum/caresland-free' target='_blank'>Get theme support</a><br/><br/><a href='http://themeisle.com/documentation-caresland-free' target='_blank'>Documentation</a>")),
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
-        'cwp_theme_notice'
+        'codeinwp_theme_notes'
 	);
 	
-	$wp_customize->add_control(
-    'cwp_theme_notice',
-    array(
-        'section' => 'codeinwp_theme_notes',
-		'type'  => 'read-only',
-    ));
+	$wp_customize->add_control( new caresland_lite_Theme_Support( $wp_customize, 'codeinwp_theme_notes',
+	    array(
+	        'section' => 'codeinwp_theme_notes',
+	   )
+	));
 	
 	/* logo */	
 	$wp_customize->add_section( 'codeinwp_logo_section' , array(
-    	'title'       => __( 'Logo', 'codeinwp' ),
+    	'title'       => __( 'Logo', 'caresland-lite' ),
     	'priority'    => 31,
-    	'description' => __('Upload a logo to replace the default site name and description in the header','codeinwp'),
+    	'description' => __('Upload a logo to replace the default site name and description in the header','caresland-lite'),
 	) );
 
 	$wp_customize->add_setting( 'codeinwp_logo' );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-	    'label'    => __( 'Logo', 'codeinwp' ),
+	    'label'    => __( 'Logo', 'caresland-lite' ),
 	    'section'  => 'codeinwp_logo_section',
 	    'settings' => 'codeinwp_logo',
 	) ) );
@@ -52,27 +62,27 @@ function codeinwp_customize_register( $wp_customize ) {
 
 	/* Footer contact info*/
 	$wp_customize->add_section( 'codeinwp_footer_info_section' , array(
-    	'title'       => __( 'Footer contact info', 'codeinwp' ),
+    	'title'       => __( 'Footer contact info', 'caresland-lite' ),
     	'priority'    => 130,
 	) );
 
-	$wp_customize->add_setting( 'codeinwp_footer_info_email' );
+	$wp_customize->add_setting( 'codeinwp_footer_info_email' , array('sanitize_callback' => 'is_email'));
 	$wp_customize->add_control( 'codeinwp_footer_info_email', array(
-	    'label'    => __( 'Email', 'codeinwp' ),
+	    'label'    => __( 'Email', 'caresland-lite' ),
 	    'section'  => 'codeinwp_footer_info_section',
 	    'settings' => 'codeinwp_footer_info_email',
 		'priority'    => 5,
 	) );
 	$wp_customize->add_setting( 'codeinwp_footer_info_support' );
 	$wp_customize->add_control( 'codeinwp_footer_info_support', array(
-	    'label'    => __( 'Support', 'codeinwp' ),
+	    'label'    => __( 'Support', 'caresland-lite' ),
 	    'section'  => 'codeinwp_footer_info_section',
 	    'settings' => 'codeinwp_footer_info_support',
 		'priority'    => 10,
 	) );
 	$wp_customize->add_setting( 'codeinwp_footer_info_chat' );
 	$wp_customize->add_control( 'codeinwp_footer_info_chat', array(
-	    'label'    => __( 'Live chat', 'codeinwp' ),
+	    'label'    => __( 'Live chat', 'caresland-lite' ),
 	    'section'  => 'codeinwp_footer_info_section',
 	    'settings' => 'codeinwp_footer_info_chat',
 		'priority'    => 15,

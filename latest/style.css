@@ -4,11 +4,11 @@ Theme URI: http://themeisle.com/themes/caresland-lite/
 Author: codeinwp
 Author URI: Codeinwp.com
 Description: Caresland Lite is a a easily customizable WordPress Theme designed for kindergartens or other websites about activities with children.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2
 License URI: license.txt
-Text Domain: codeinwp
-Domain Path: /languages/
+Text Domain: caresland-lite
+Domain Path: /languages
 Tags: orange, yellow, green, gray, light, one-column, right-sidebar, responsive-layout, custom-background, custom-header, editor-style, featured-images, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -2123,7 +2123,9 @@ object {
 
 /* =Comments
 ----------------------------------------------- */
-
+.page #comments {
+	margin-top:35px;
+}
 .comment-content a {
 	word-wrap: break-word;
 }

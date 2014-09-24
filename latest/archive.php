@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package codeinwp
+ * @package caresland-lite
  */
 
 get_header(); ?>
@@ -35,7 +35,7 @@ get_header(); ?>
 										 * what author we're dealing with (if that is the case).
 										*/
 										the_post();
-										printf( __( 'Author: %s', 'codeinwp' ), '<span class="vcard">' . get_the_author() . '</span>' );
+										printf( __( 'Author: %s', 'caresland-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
 										/* Since we called the_post() above, we need to
 										 * rewind the loop back to the beginning that way
 										 * we can run the loop properly, in full.
@@ -43,31 +43,31 @@ get_header(); ?>
 										rewind_posts();
 
 									elseif ( is_day() ) :
-										printf( __( 'Day: %s', 'codeinwp' ), '<span>' . get_the_date() . '</span>' );
+										printf( __( 'Day: %s', 'caresland-lite' ), '<span>' . get_the_date() . '</span>' );
 
 									elseif ( is_month() ) :
-										printf( __( 'Month: %s', 'codeinwp' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'codeinwp' ) ) . '</span>' );
+										printf( __( 'Month: %s', 'caresland-lite' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'caresland-lite' ) ) . '</span>' );
 
 									elseif ( is_year() ) :
-										printf( __( 'Year: %s', 'codeinwp' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'codeinwp' ) ) . '</span>' );
+										printf( __( 'Year: %s', 'caresland-lite' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'caresland-lite' ) ) . '</span>' );
 
 									elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-										_e( 'Asides', 'codeinwp' );
+										_e( 'Asides', 'caresland-lite' );
 
 									elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-										_e( 'Images', 'codeinwp');
+										_e( 'Images', 'caresland-lite');
 
 									elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-										_e( 'Videos', 'codeinwp' );
+										_e( 'Videos', 'caresland-lite' );
 
 									elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-										_e( 'Quotes', 'codeinwp' );
+										_e( 'Quotes', 'caresland-lite' );
 
 									elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-										_e( 'Links', 'codeinwp' );
+										_e( 'Links', 'caresland-lite' );
 
 									else :
-										_e( 'Archives', 'codeinwp' );
+										_e( 'Archives', 'caresland-lite' );
 
 									endif;
 								?>
@@ -101,10 +101,10 @@ get_header(); ?>
 					<?php endif; ?>
 
 					<?php 
-						if (function_exists("cwp_pagination")) {
-							cwp_pagination();
+						if (function_exists("caresland_lite_pagination")) {
+							caresland_lite_pagination();
 						} else{
-							codeinwp_paging_nav();
+							caresland_lite_paging_nav();
 						} 
 					?>
                     </div><!-- .blog-content -->

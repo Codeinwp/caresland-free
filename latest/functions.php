@@ -1,8 +1,8 @@
 <?php
 /**
- * codeinwp functions and definitions
+ * caresland-lite functions and definitions
  *
- * @package codeinwp
+ * @package caresland-lite
  */
 
 /**
@@ -12,15 +12,15 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-function cwp_setup() {
+function caresland_lite_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on codeinwp, use a find and replace
-	 * to change 'codeinwp' to the name of your theme in all the template files
+	 * If you're building a theme based on caresland-lite, use a find and replace
+	 * to change 'caresland-lite' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'codeinwp', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'caresland-lite', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -34,7 +34,7 @@ function cwp_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'my-primary' => __( 'The Primary Menu', 'codeinwp' ),
+		'my-primary' => __( 'The Primary Menu', 'caresland-lite' ),
 	) );
 
 	// Enable support for Post Formats.
@@ -55,15 +55,15 @@ function cwp_setup() {
 	add_theme_support( 'custom-header', $args );
 }
 
-add_action( 'after_setup_theme', 'cwp_setup' );
+add_action( 'after_setup_theme', 'caresland_lite_setup' );
 
 
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-function codeinwp_widgets_init() {
+function caresland_lite_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'codeinwp' ),
+		'name'          => __( 'Sidebar', 'caresland-lite' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="line-orange"></div>',
 		'after_widget'  => '<div class="bottom-shadow"></div></aside>',
@@ -71,7 +71,7 @@ function codeinwp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer1', 'codeinwp' ),
+		'name'          => __( 'Footer1', 'caresland-lite' ),
 		'id'            => 'footer-1',
 		'before_widget' => '<div id="%1$s" class="footer-box-inside">',
 		'after_widget'  => '</div>',
@@ -79,7 +79,7 @@ function codeinwp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer2', 'codeinwp' ),
+		'name'          => __( 'Footer2', 'caresland-lite' ),
 		'id'            => 'footer-2',
 		'before_widget' => '<div id="%1$s" class="footer-box-inside">',
 		'after_widget'  => '</div>',
@@ -87,7 +87,7 @@ function codeinwp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer3', 'codeinwp' ),
+		'name'          => __( 'Footer3', 'caresland-lite' ),
 		'id'            => 'footer-3',
 		'before_widget' => '<div id="%1$s" class="footer-box-inside">',
 		'after_widget'  => '</div>',
@@ -95,7 +95,7 @@ function codeinwp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer4', 'codeinwp' ),
+		'name'          => __( 'Footer4', 'caresland-lite' ),
 		'id'            => 'footer-4',
 		'before_widget' => '<div id="%1$s" class="footer-box-inside">',
 		'after_widget'  => '</div>',
@@ -103,30 +103,30 @@ function codeinwp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );	
 }
-add_action( 'widgets_init', 'codeinwp_widgets_init' );
+add_action( 'widgets_init', 'caresland_lite_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function codeinwp_scripts() {
+function caresland_lite_scripts() {
 
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style( 'caresland_lite_bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css');
 
-	wp_enqueue_style( 'codeinwp-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'caresland_lite_style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), 'v3.0.3', true );
+	wp_enqueue_script( 'caresland_lite_bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), 'v3.0.3', true );
 
-	wp_enqueue_script( 'tinynav', get_template_directory_uri() . '/js/tinynav.min.js', array(), 'v1.1', true );
+	wp_enqueue_script( 'caresland_lite_tinynav', get_template_directory_uri() . '/js/tinynav.min.js', array(), 'v1.1', true );
 	
-	wp_enqueue_script( 'custom-scrips', get_template_directory_uri() . '/js/functions.js', array('jquery'), 'v1.0', true );
+	wp_enqueue_script( 'caresland_lite_custom-scrips', get_template_directory_uri() . '/js/functions.js', array('jquery'), 'v1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'codeinwp_scripts' );
+add_action( 'wp_enqueue_scripts', 'caresland_lite_scripts' );
 
 /**
  * Custom template tags for this theme.
@@ -149,8 +149,8 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /* no title */
-add_filter( 'the_title', 'cwp_no_title'); 
-function cwp_no_title ($title) { 
+add_filter( 'the_title', 'caresland_lite_title'); 
+function caresland_lite_title ($title) { 
     if( $title == "" ){ 
         $title = "(No title)"; 
     } 
@@ -158,7 +158,7 @@ function cwp_no_title ($title) {
 }
 
 /* pagination */
-function cwp_pagination($pages = '', $range = 3)
+function caresland_lite_pagination($pages = '', $range = 3)
 {  
      $showitems = ($range * 2)+1;  
  
@@ -221,23 +221,23 @@ add_image_size( 'post-thumbnail', 315, 172, true );
 /*
  * Search only post
  */
-function cwp_SearchFilter($query) {
+function caresland_lite_SearchFilter($query) {
 	if ($query->is_search) {
 		$query->set('post_type', 'post');
 	}
 	return $query;
 }
-add_filter('pre_get_posts','cwp_SearchFilter');
+add_filter('pre_get_posts','caresland_lite_SearchFilter');
 
 
-function cwp_add_editor_styles() {
+function caresland_lite_add_editor_styles() {
     add_editor_style( '/css/custom-editor-style.css' );
 }
-add_action( 'init', 'cwp_add_editor_styles' );
+add_action( 'init', 'caresland_lite_add_editor_styles' );
 
-add_action( 'customize_controls_print_scripts', 'add_customizer_button' );
+add_action( 'customize_controls_print_scripts', 'caresland_lite_add_customizer_button' );
 
-function add_customizer_button()
+function caresland_lite_add_customizer_button()
 {
     wp_register_script( 'cwp_customizer_script', get_template_directory_uri().'/js/customizer_button.js', array('jquery'), 'v1.0', true);
     wp_enqueue_script( 'cwp_customizer_script' );

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package codeinwp
+ * @package caresland-lite
  */
 ?>
 
@@ -24,9 +24,9 @@
 							</div>
                             
                             <a href="<?php the_permalink(); ?>/#comments" class="btn-box-green post-box-comm">
-								<?php comments_number( 'Comments (0)', 'Comments (1)', 'Comments (%)' ); ?>
+								<?php comments_number( __('Comments (0)','caresland-lite'), __('Comments (1)','caresland-lite'), __('Comments (%)','caresland-lite') ); ?>
                             </a>
-                            <a href="<?php the_permalink(); ?>" class="btn-box-orange post-box-read" title="<?php the_title(); ?>"><?php _e('Read more','codeinwp'); ?></a>
+                            <a href="<?php the_permalink(); ?>" class="btn-box-orange post-box-read" title="<?php the_title(); ?>"><?php _e('Read more','caresland-lite'); ?></a>
                             
                         </article><!-- .post-box -->
                         

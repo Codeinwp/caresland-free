@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package codeinwp
+ * @package caresland-lite
  */
 ?>
 
@@ -40,25 +40,25 @@
 			<div class="site-info-contact">
             	
 	            <?php if (get_theme_mod('codeinwp_footer_info_email')) : ?>
-            		<p class="c-email"><a href="mailto:<?php echo get_theme_mod('codeinwp_footer_info_email'); ?>"><?php _e('Write us an Email','codeinwp'); ?></a></p>
+            		<p class="c-email"><a href="mailto:<?php echo get_theme_mod('codeinwp_footer_info_email'); ?>"><?php _e('Write us an Email','caresland-lite'); ?></a></p>
                 <?php endif; ?>
                 <?php if (get_theme_mod('codeinwp_footer_info_chat')) : ?>
-                	<p class="c-chat"><a href="<?php echo get_theme_mod('codeinwp_footer_info_chat'); ?>"><?php _e('Live Chat 24 / 7','codeinwp'); ?></a></p>
+                	<p class="c-chat"><a href="<?php echo get_theme_mod('codeinwp_footer_info_chat'); ?>"><?php _e('Live Chat 24 / 7','caresland-lite'); ?></a></p>
                 <?php endif; ?>
                 <?php if (get_theme_mod('codeinwp_footer_info_support')) : ?>
-                	<p class="c-support"><?php _e('Support:','codeinwp'); ?> <?php echo get_theme_mod('codeinwp_footer_info_support'); ?></p>
+                	<p class="c-support"><?php _e('Support:','caresland-lite'); ?> <?php echo get_theme_mod('codeinwp_footer_info_support'); ?></p>
                 <?php endif; ?>
             </div>
 
             <div class="site-info">
-                <?php _e( 'Copyright &copy; ', 'codeinwp' ); ?>
+                <?php _e( 'Copyright &copy; ', 'caresland-lite' ); ?>
                 <?php echo date( 'Y' ); ?>
                 <strong> <?php bloginfo( 'name' ); ?> </strong>
-                <?php _e( '| All rights reserved.' ); ?>
+                <?php _e( '| All rights reserved.','caresland-lite' ); ?>
             </div><!-- .site-info -->
 			<div class="clear"></div>
 			<div class="poweredby">
-				<a href="http://themeisle.com/themes/caresland/?utm_source=caresland&amp;utm_medium=link&amp;utm_campaign=themefooter" target="_blank">Caresland</a> powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>
+				<a href="http://themeisle.com/themes/caresland-lite/" target="_blank">Caresland</a> <?php _e('powered by','caresland-lite');?> <a href="http://wordpress.org/" target="_blank">WordPress</a>
 			</div>
 
     	</div><!-- .container -->

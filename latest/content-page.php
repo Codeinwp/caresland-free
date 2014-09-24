@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package codeinwp
+ * @package caresland-lite
  */
 ?>
 
@@ -15,10 +15,10 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'codeinwp' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'caresland-lite' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'codeinwp' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'caresland-lite' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

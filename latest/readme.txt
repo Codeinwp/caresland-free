@@ -6,7 +6,7 @@ Tags: orange, yellow, green, gray, light, one-column, right-sidebar, responsive-
 
 Requires at least:	3.3.0
 
-Tested up to:		3.6
+Tested up to:		4.0
 
 Caresland Lite
 == Description ==
