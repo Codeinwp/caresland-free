@@ -1,12 +1,18 @@
 = Caresland Lite =
 
-Author: codeinwp
+Author: themeisle
 
 Tags: orange, yellow, green, gray, light, one-column, right-sidebar, responsive-layout, custom-background, custom-header, editor-style, featured-images, sticky-post, threaded-comments, translation-ready
 
 Requires at least:	3.3.0
 
+<<<<<<< HEAD
 Tested up to:		4.0
+=======
+Tested up to:		3.9
+
+Caresland Lite
+>>>>>>> 5b0cd18c7c9576abcb0d8e92dff87f86acaf559c
 
 Caresland Lite
 == Description ==
