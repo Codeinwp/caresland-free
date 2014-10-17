@@ -57,12 +57,8 @@
                 <?php _e( '| All rights reserved.','caresland-lite' ); ?>
             </div><!-- .site-info -->
 			<div class="clear"></div>
-			<div class="poweredby">
-<<<<<<< HEAD
-				<a href="http://themeisle.com/themes/caresland-lite/" target="_blank">Caresland</a> <?php _e('powered by','caresland-lite');?> <a href="http://wordpress.org/" target="_blank">WordPress</a>
-=======
-				<a href="http://themeisle.com/themes/caresland/" target="_blank">Caresland</a> powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>
->>>>>>> 5b0cd18c7c9576abcb0d8e92dff87f86acaf559c
+			<div class="poweredby"> 
+				<a href="http://themeisle.com/themes/caresland-lite/" target="_blank">Caresland</a> <?php _e('powered by','caresland-lite');?> <a href="http://wordpress.org/" target="_blank">WordPress</a>  
 			</div>
 
     	</div><!-- .container -->
