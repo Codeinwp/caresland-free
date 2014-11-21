@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package caresland_lite_paging_nav
+ * @package ti_caresland_lite
  */
 
 get_header(); ?>
@@ -18,11 +18,11 @@ get_header(); ?>
 
 					<section class="error-404 not-found">
 						<header class="page-header">
-							<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'caresland_lite_paging_nav' ); ?></h1>
+							<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'ti-caresland-lite' ); ?></h1>
 						</header><!-- .page-header -->
 
 						<div class="page-content">
-							<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'caresland_lite_paging_nav' ); ?></p>
+							<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ti-caresland-lite' ); ?></p>
 
 							<?php get_search_form(); ?>
 
@@ -36,7 +36,7 @@ get_header(); ?>
                     <div class="botttom-box-shadow-right"></div>
 
                 </div>
-                
+
             </div><!-- .container -->
         </div><!-- full-content-body -->
 

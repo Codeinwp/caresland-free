@@ -2,29 +2,31 @@
 /**
  * The template used for displaying home page.
  *
- * @package codeinwp
+ * @package ti_caresland_lite
  */
 
 get_header(); ?>
 
-<!-- [begin] content -->
+       <!-- [begin] content -->
 <div id="content" class="content-area" role="main">
+
+
 
     <?php if(!is_home()): ?>
 
         <div class="content-body">
         	<div class="container">
-       
+
                 <div class="content-text">
-	    
+
                     <?php while ( have_posts() ) : the_post(); ?>
-                
+
                         <?php the_content(); ?>
 
     				<?php endwhile; // end of the loop. ?>
 
                 </div>
-                             
+
             </div><!-- .container -->
         </div><!-- .content-body -->
 
@@ -50,22 +52,23 @@ get_header(); ?>
                             ?>
 
                         <?php endwhile; ?>
+				<?php if(get_next_posts_link() != null ) : ?>
+					<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+			
+				<?php endif; ?>
+				<?php if(get_previous_posts_link() != null ) : ?>
+				<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 
-                        <?php 
-                            if (function_exists("caresland_lite_pagination")) {
-                                caresland_lite_pagination();
-                            } else{
-                                caresland_lite_paging_nav();
-                            } 
-                        ?>
-
+				<?php endif; ?>
+									
+		
                     <?php else : ?>
 
                         <?php get_template_part( 'content', 'none' ); ?>
 
                     <?php endif; ?>
 
-   
+
                     </div><!-- .blog-content -->
                 </div><!-- .blog-content-wra -->
 
@@ -78,6 +81,6 @@ get_header(); ?>
 
     <?php endif; ?>
 
-	</div>        
-        
+	</div>
+
 <?php get_footer(); ?>

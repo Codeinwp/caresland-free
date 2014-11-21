@@ -18,7 +18,7 @@ if(isset($_POST['submitted'])) {
 
         if(trim($_POST['contactName']) === '') {
 
-               $nameError = __('Please enter your name.','caresland-lite');;
+               $nameError = __('Please enter your name.','ti-caresland-lite');;
 
                $hasError = true;
 
@@ -32,7 +32,7 @@ if(isset($_POST['submitted'])) {
 
          if(trim($_POST['contactPhone']) === '') {
 
-               $phoneError = __('Please enter your phone number.','caresland-lite');;
+               $phoneError = __('Please enter your phone number.','ti-caresland-lite');;
 
                $hasError = true;
 
@@ -46,13 +46,13 @@ if(isset($_POST['submitted'])) {
 
         if(trim($_POST['email']) === '')  {
 
-               $emailError = __('Please enter your email address.','caresland-lite');;
+               $emailError = __('Please enter your email address.','ti-caresland-lite');;
 
                $hasError = true;
 
         } else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) {
 
-               $emailError = __('You entered an invalid email address.','caresland-lite');
+               $emailError = __('You entered an invalid email address.','ti-caresland-lite');
 
                $hasError = true;
 
@@ -66,7 +66,7 @@ if(isset($_POST['submitted'])) {
 
         if(trim($_POST['comments']) === '') {
 
-               $commentError = __('Please enter a message.','caresland-lite');;
+               $commentError = __('Please enter a message.','ti-caresland-lite');;
 
                $hasError = true;
 
@@ -170,13 +170,13 @@ if(isset($_POST['submitted'])) {
 
                                                       <div>
 
-                                                             <p><?php echo __('Thanks, your email was sent successfully.','caresland-lite'); ?></p>
+                                                             <p><?php echo __('Thanks, your email was sent successfully.','ti-caresland-lite'); ?></p>
 
                                                       </div>
 
                                               <?php } else { ?>
 
-                                              
+
 
                                                       <?php the_content(); ?>
 
@@ -186,7 +186,7 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                        	<label for="i1"><?php _e('Name*:','caresland-lite'); ?></label>
+                                        	<label for="i1"><?php _e('Name*:','ti-caresland-lite'); ?></label>
 
 
 
@@ -202,7 +202,7 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                            <label for="i2"><?php echo __('Phone*:','caresland-lite'); ?></label>
+                                            <label for="i2"><?php echo __('Phone*:','ti-caresland-lite'); ?></label>
 
 
 
@@ -218,7 +218,7 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                            <label for="i3"><?php echo __('Email*:','caresland-lite'); ?></label>
+                                            <label for="i3"><?php echo __('Email*:','ti-caresland-lite'); ?></label>
 
 
 
@@ -238,11 +238,11 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                                             
 
 
 
-                                            <label for="i4"><?php echo __('Message:','caresland-lite'); ?></label>
+
+                                            <label for="i4"><?php echo __('Message:','ti-caresland-lite'); ?></label>
 
 
 
@@ -264,7 +264,7 @@ if(isset($_POST['submitted'])) {
 
                                             <input type="submit" value="Send Message">
 
-                                            
+
 
                                             <input type="hidden" name="submitted" id="submitted" value="true" />
 
@@ -280,7 +280,7 @@ if(isset($_POST['submitted'])) {
 
                                </div><!-- .entry-content -->
 
-                               
+
 
                        </div><!-- .post -->
 
@@ -298,7 +298,7 @@ if(isset($_POST['submitted'])) {
 
 
 
-							<?php echo get_theme_mod( 'codeinwp_contact_page_map' ); ?>         
+							<?php echo get_theme_mod( 'ti_caresland_lite_contact_page_map' ); ?>
 
 
 
