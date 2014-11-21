@@ -368,7 +368,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			?>
 			<div class="tgmpa wrap">
 
-				<?php screen_icon( apply_filters( 'tgmpa_default_screen_icon', 'themes' ) ); ?>
+				
 				<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 				<?php $plugin_table->prepare_items(); ?>
 

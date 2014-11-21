@@ -36,8 +36,7 @@ function codeinwp_customize_register( $wp_customize ) {
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
-        'codeinwp_theme_notes'
-	);
+        'codeinwp_theme_notes',array('sanitize_callback' => 'caresland_lite_sanitize_text'));
 	
 	$wp_customize->add_control( new caresland_lite_Theme_Support( $wp_customize, 'codeinwp_theme_notes',
 	    array(
@@ -52,7 +51,7 @@ function codeinwp_customize_register( $wp_customize ) {
     	'description' => __('Upload a logo to replace the default site name and description in the header','caresland-lite'),
 	) );
 
-	$wp_customize->add_setting( 'codeinwp_logo' );
+	$wp_customize->add_setting( 'codeinwp_logo' ,array('sanitize_callback' => 'caresland_lite_sanitize_text'));
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
 	    'label'    => __( 'Logo', 'caresland-lite' ),
 	    'section'  => 'codeinwp_logo_section',
@@ -73,14 +72,14 @@ function codeinwp_customize_register( $wp_customize ) {
 	    'settings' => 'codeinwp_footer_info_email',
 		'priority'    => 5,
 	) );
-	$wp_customize->add_setting( 'codeinwp_footer_info_support' );
+	$wp_customize->add_setting( 'codeinwp_footer_info_support' ,array('sanitize_callback' => 'caresland_lite_sanitize_text'));
 	$wp_customize->add_control( 'codeinwp_footer_info_support', array(
 	    'label'    => __( 'Support', 'caresland-lite' ),
 	    'section'  => 'codeinwp_footer_info_section',
 	    'settings' => 'codeinwp_footer_info_support',
 		'priority'    => 10,
 	) );
-	$wp_customize->add_setting( 'codeinwp_footer_info_chat' );
+	$wp_customize->add_setting( 'codeinwp_footer_info_chat' ,array('sanitize_callback' => 'caresland_lite_sanitize_text'));
 	$wp_customize->add_control( 'codeinwp_footer_info_chat', array(
 	    'label'    => __( 'Live chat', 'caresland-lite' ),
 	    'section'  => 'codeinwp_footer_info_section',
@@ -106,6 +105,9 @@ class Example_Customize_Textarea_Control extends WP_Customize_Control {
     }
 }
 endif;
+function caresland_lite_sanitize_text( $input ) {
+			return wp_kses_post( force_balance_tags( $input ) );
+		}
 /**
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
