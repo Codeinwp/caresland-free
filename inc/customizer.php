@@ -25,8 +25,8 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
-        'ti_caresland_lite_theme_notice'
-	);
+        'ti_caresland_lite_theme_notice',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 
 	$wp_customize->add_control(
     'ti_caresland_lite_theme_notice',
@@ -42,7 +42,8 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
     	'description' => __('Upload a logo to replace the default site name and description in the header','ti-caresland-lite'),
 	) );
 
-	$wp_customize->add_setting( 'ti_caresland_lite_logo' );
+	$wp_customize->add_setting( 'ti_caresland_lite_logo',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
 	    'label'    => __( 'Logo', 'ti-caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_logo_section',
@@ -56,7 +57,8 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
     	'description' => __('Links for social icons.','ti-caresland-lite'),
 	) );
 
-	$wp_customize->add_setting( 'ti_caresland_lite_social_link_fb',array(
+	$wp_customize->add_setting( 'ti_caresland_lite_social_link_fb',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text',
 		'default'     => '#',
 		'transport'   => 'refresh',
 	) );
@@ -66,7 +68,8 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 	    'settings' => 'ti_caresland_lite_social_link_fb',
 	) );
 	
-	$wp_customize->add_setting( 'ti_caresland_lite_social_link_tw',array(
+	$wp_customize->add_setting( 'ti_caresland_lite_social_link_tw',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text',
 		'default'     => '#',
 		'transport'   => 'refresh',
 	) );
@@ -76,7 +79,8 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 	    'settings' => 'ti_caresland_lite_social_link_tw',
 	) );	
 
-	$wp_customize->add_setting( 'ti_caresland_lite_social_link_gp',array(
+	$wp_customize->add_setting( 'ti_caresland_lite_social_link_gp',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text',
 		'default'     => '#',
 		'transport'   => 'refresh',
 	) );
@@ -86,7 +90,8 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 	    'settings' => 'ti_caresland_lite_social_link_gp',
 	) );
 	
-	$wp_customize->add_setting( 'ti_caresland_lite_social_link_in',array(
+	$wp_customize->add_setting( 'ti_caresland_lite_social_link_in',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text',
 		'default'     => '#',
 		'transport'   => 'refresh',
 	) );
@@ -96,7 +101,8 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 	    'settings' => 'ti_caresland_lite_social_link_in',
 	) );
 	
-	$wp_customize->add_setting( 'ti_caresland_lite_social_link_yo',array(
+	$wp_customize->add_setting( 'ti_caresland_lite_social_link_yo',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text',
 		'default'     => '#',
 		'transport'   => 'refresh',
 	) );
@@ -112,21 +118,24 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
     	'priority'    => 130,
 	) );
 
-	$wp_customize->add_setting( 'ti_caresland_lite_footer_info_email' );
+	$wp_customize->add_setting( 'ti_caresland_lite_footer_info_email',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 	$wp_customize->add_control( 'ti_caresland_lite_footer_info_email', array(
 	    'label'    => __( 'Email', 'ti-caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_footer_info_section',
 	    'settings' => 'ti_caresland_lite_footer_info_email',
 		'priority'    => 5,
 	) );
-	$wp_customize->add_setting( 'ti_caresland_lite_info_support' );
+	$wp_customize->add_setting( 'ti_caresland_lite_info_support',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 	$wp_customize->add_control( 'ti_caresland_lite_info_support', array(
 	    'label'    => __( 'Support', 'ti-caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_footer_info_section',
 	    'settings' => 'ti_caresland_lite_info_support',
 		'priority'    => 10,
 	) );
-	$wp_customize->add_setting( 'ti_caresland_lite_footer_info_chat' );
+	$wp_customize->add_setting( 'ti_caresland_lite_footer_info_chat',
+        array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 	$wp_customize->add_control( 'ti_caresland_lite_footer_info_chat', array(
 	    'label'    => __( 'Live chat', 'ti-caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_footer_info_section',
@@ -155,6 +164,11 @@ endif;
 /**
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
+
+		function ti_caresland_lite_sanitize_text( $input ) {
+			return wp_kses_post( force_balance_tags( $input ) );
+		}
+		
 function  ti_caresland_lite_customize_preview_js() {
 	wp_enqueue_script( 'customizerJS', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '20131205', true );
 }
