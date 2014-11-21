@@ -1,5 +1,13 @@
 
 
+### 1.2.3 - 21/11/2014
+
+ Changes: 
+
+
+ * fonts fix   sanitize
+
+
 ### 1.2.2 - 21/11/2014
 
  Changes: 
