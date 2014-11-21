@@ -163,7 +163,7 @@ function  ti_caresland_lite_no_title ($title) {
 }
 require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 add_action( 'tgmpa_register', 'ti_caresland_lite_required_plugins' );
-function lawyeria_lite_required_plugins() {
+function ti_caresland_lite_required_plugins() {
 
     /**
      * Array of plugin arrays. Required keys are name and slug.
