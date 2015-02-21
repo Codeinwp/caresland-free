@@ -146,7 +146,8 @@ function ti_caresland_lite_scripts() {
 	wp_enqueue_script( 'tinynav', get_template_directory_uri() . '/js/tinynav.min.js', array(), 'v1.1', true );
 
 	wp_enqueue_script( 'custom-scrips', get_template_directory_uri() . '/js/functions.js', array('jquery'), 'v1.0', true );
-
+	wp_enqueue_script( 'scada_font','//fonts.googleapis.com/css?family=Scada' );
+		
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
