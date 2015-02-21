@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package caresland-lite
+ * @package ti_caresland_lite
  */
 
 get_header(); ?>
@@ -12,20 +12,20 @@ get_header(); ?>
             <div class="container">
 
                 <div class="blog-content-wrap">
-                
+
                    	<div id="main" class="blog-content single-content">
-                    
+
 					<?php while ( have_posts() ) : the_post(); ?>
-            
+
                         <?php get_template_part( 'content', 'single' ); ?>
-            
+
                         <?php
                             // If comments are open or we have at least one comment, load up the comment template
                             if ( comments_open() || '0' != get_comments_number() ) :
                                 comments_template();
                             endif;
                         ?>
-            
+
                     <?php endwhile; // end of the loop. ?>
 
                     </div><!-- .blog-content -->
@@ -35,6 +35,6 @@ get_header(); ?>
 					<?php get_sidebar(); ?>
                 </div>
 		</div>
-	</div>              
-      
+	</div>
+
 <?php get_footer(); ?>
