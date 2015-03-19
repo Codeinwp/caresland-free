@@ -4,7 +4,7 @@ Theme URI: https://themeisle.com/themes/caresland-lite/
 Author: themeisle
 Author URI: https://themeisle.com/
 Description: Caresland Lite is a free kindergarten WordPress Theme designed for kindergartens or other websites about activities with children/kids.
-Version: 1.5.7
+Version: 1.5.8
 License: GNU General Public License v3
 License URI: license.txt
 Text Domain: ti_caresland_lite
@@ -1952,7 +1952,8 @@ ul.arrow-bf li{
 	float: left;
 	margin-top: 0;
 	display: inline-block;
-	background: url(images/bg-submit.png)
+	background: url(images/bg-submit.png);
+	padding: 9px 16px 9px 16px;
 }
 .sidebar .widget .textwidget select{
 	margin-left: -16px;
