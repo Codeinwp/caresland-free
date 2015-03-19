@@ -1,5 +1,13 @@
 
 
+### 1.5.8 - 19/03/2015
+
+ Changes: 
+
+
+ * Fixed #11 Search button display wrong
+
+
 ### 1.2.3 - 21/11/2014
 
  Changes: 
