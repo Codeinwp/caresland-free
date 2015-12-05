@@ -4,50 +4,35 @@ Template Name: Page template with sidebar
 */
 get_header();
 ?>
-        <!-- [begin] content -->
-        <div class="full-content-body ">
+
+       <!-- [begin] content -->
+        <div id="primary" class="full-content-body ">
             <div class="container">
-            
-                <div id="primary" class="blog-content-wrap">
-                
-                   	<div id="main" class="blog-content" role="main">
-                    
-                    
 
-					<?php if ( have_posts() ) : ?>
+                <div class="blog-content-wrap">
 
-						<?php while ( have_posts() ) : the_post(); ?>
+                   	<div id="main" class="blog-content single-content">
 
-							<?php
-								/* Include the Post-Format-specific template for the content.
-								 * If you want to override this in a child theme, then include a file
-								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-								 */
-								get_template_part( 'content', 'page' );
-							?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php endwhile; ?>
+                        <?php get_template_part( 'content', 'page' ); ?>
 
-					<?php else : ?>
+                        <?php
+                            // If comments are open or we have at least one comment, load up the comment template
+                            if ( comments_open() || '0' != get_comments_number() ) :
+                                comments_template();
+                            endif;
+                        ?>
 
-						<?php get_template_part( 'content', 'none' ); ?>
+                    <?php endwhile; // end of the loop. ?>
 
-					<?php endif; ?>
-
-					<?php 
-						if (function_exists("cwp_pagination")) {
-							cwp_pagination();
-						} else{
-							codeinwp_paging_nav();
-						} 
-					?>
                     </div><!-- .blog-content -->
-				</div><!-- .blog-content-wra -->
+				</div><!-- .blog-content-wrap -->
 
                 <div class="sidebar">
 					<?php get_sidebar(); ?>
-				</div><!-- .sidebar -->
-
+                </div>
 		</div>
 	</div>
+
 <?php get_footer(); ?>
