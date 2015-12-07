@@ -1,5 +1,19 @@
 
 
+### 1.6.0 - 07/12/2015
+
+ Changes: 
+
+
+ * Create page-sidebar.php
+ * Sidebar
+
+Sidebar
+ * Merge pull request #15 from HardeepAsrani/development
+
+Add page with sidebar
+
+
 ### 1.5.9 - 16/07/2015
 
  Changes: 
