@@ -19,9 +19,9 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 
 	/* theme notes */
 	$wp_customize->add_section( 'ti_caresland_lite_theme_notes' , array(
-		'title'      => __('ThemeIsle theme notes','ti-caresland-lite'),
+		'title'      => __('ThemeIsle theme notes','caresland-lite'),
 		'description' => sprintf( __( "Thank you for being part of this! We've spent almost 6 months building ThemeIsle without really knowing if anyone will ever use a theme or not, so we're very grateful that you've decided to work with us. Wanna <a href='http://themeisle.com/contact/' target='_blank'>say hi</a>?
-		<br/><br/><a href='http://themeisle.com/demo/?theme=Caresland Free' target='_blank' />View Theme Demo</a> | <a href='http://themeisle.com/forums/forum/caresland/' target='_blank'>Get theme support</a>")),
+		<br/><br/><a href='http://themeisle.com/demo/?theme=Caresland Free' target='_blank' />View Theme Demo</a> | <a href='http://themeisle.com/forums/forum/caresland/' target='_blank'>Get theme support</a>",'caresland-lite')),
 		'priority'   => 30,
 	));
 	$wp_customize->add_setting(
@@ -37,24 +37,24 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 
 	/* logo */
 	$wp_customize->add_section( 'ti_caresland_lite_logo_section' , array(
-    	'title'       => __( 'Logo', 'ti-caresland-lite' ),
+    	'title'       => __( 'Logo', 'caresland-lite' ),
     	'priority'    => 31,
-    	'description' => __('Upload a logo to replace the default site name and description in the header','ti-caresland-lite'),
+    	'description' => __('Upload a logo to replace the default site name and description in the header','caresland-lite'),
 	) );
 
 	$wp_customize->add_setting( 'ti_caresland_lite_logo',
         array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-	    'label'    => __( 'Logo', 'ti-caresland-lite' ),
+	    'label'    => __( 'Logo', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_logo_section',
 	    'settings' => 'ti_caresland_lite_logo',
 	) ) );
 
 /* Social icons*/
 	$wp_customize->add_section( 'ti_caresland_lite_link_section' , array(
-    	'title'       => __( 'Social icons', 'ti-caresland-lite' ),
+    	'title'       => __( 'Social icons', 'caresland-lite' ),
     	'priority'    => 30,
-    	'description' => __('Links for social icons.','ti-caresland-lite'),
+    	'description' => __('Links for social icons.','caresland-lite'),
 	) );
 
 	$wp_customize->add_setting( 'ti_caresland_lite_social_link_fb',
@@ -63,7 +63,7 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 		'transport'   => 'refresh',
 	) );
 	$wp_customize->add_control( 'ti_caresland_lite_social_link_fb', array(
-	    'label'    => __( 'Facebook link', 'ti-caresland-lite' ),
+	    'label'    => __( 'Facebook link', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_link_section',
 	    'settings' => 'ti_caresland_lite_social_link_fb',
 	) );
@@ -74,7 +74,7 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 		'transport'   => 'refresh',
 	) );
 	$wp_customize->add_control( 'ti_caresland_lite_social_link_tw', array(
-	    'label'    => __( 'Twitter link', 'ti-caresland-lite' ),
+	    'label'    => __( 'Twitter link', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_link_section',
 	    'settings' => 'ti_caresland_lite_social_link_tw',
 	) );	
@@ -85,7 +85,7 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 		'transport'   => 'refresh',
 	) );
 	$wp_customize->add_control( 'ti_caresland_lite_social_link_gp', array(
-	    'label'    => __( 'Google+ link', 'ti-caresland-lite' ),
+	    'label'    => __( 'Google+ link', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_link_section',
 	    'settings' => 'ti_caresland_lite_social_link_gp',
 	) );
@@ -96,7 +96,7 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 		'transport'   => 'refresh',
 	) );
 	$wp_customize->add_control( 'ti_caresland_lite_social_link_in', array(
-	    'label'    => __( 'Linkedin link:', 'ti-caresland-lite' ),
+	    'label'    => __( 'Linkedin link:', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_link_section',
 	    'settings' => 'ti_caresland_lite_social_link_in',
 	) );
@@ -107,21 +107,21 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 		'transport'   => 'refresh',
 	) );
 	$wp_customize->add_control( 'ti_caresland_lite_social_link_yo', array(
-	    'label'    => __( 'Youtube link:', 'ti-caresland-lite' ),
+	    'label'    => __( 'Youtube link:', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_link_section',
 	    'settings' => 'ti_caresland_lite_social_link_yo',
 	) );
 
 	/* Footer contact info*/
 	$wp_customize->add_section( 'ti_caresland_lite_footer_info_section' , array(
-    	'title'       => __( 'Footer contact info', 'ti-caresland-lite' ),
+    	'title'       => __( 'Footer contact info', 'caresland-lite' ),
     	'priority'    => 130,
 	) );
 
 	$wp_customize->add_setting( 'ti_caresland_lite_footer_info_email',
         array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 	$wp_customize->add_control( 'ti_caresland_lite_footer_info_email', array(
-	    'label'    => __( 'Email', 'ti-caresland-lite' ),
+	    'label'    => __( 'Email', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_footer_info_section',
 	    'settings' => 'ti_caresland_lite_footer_info_email',
 		'priority'    => 5,
@@ -129,7 +129,7 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'ti_caresland_lite_info_support',
         array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 	$wp_customize->add_control( 'ti_caresland_lite_info_support', array(
-	    'label'    => __( 'Support', 'ti-caresland-lite' ),
+	    'label'    => __( 'Support', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_footer_info_section',
 	    'settings' => 'ti_caresland_lite_info_support',
 		'priority'    => 10,
@@ -137,7 +137,7 @@ function ti_caresland_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'ti_caresland_lite_footer_info_chat',
         array('sanitize_callback' => 'ti_caresland_lite_sanitize_text'));
 	$wp_customize->add_control( 'ti_caresland_lite_footer_info_chat', array(
-	    'label'    => __( 'Live chat', 'ti-caresland-lite' ),
+	    'label'    => __( 'Live chat', 'caresland-lite' ),
 	    'section'  => 'ti_caresland_lite_footer_info_section',
 	    'settings' => 'ti_caresland_lite_footer_info_chat',
 		'priority'    => 15,

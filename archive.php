@@ -35,7 +35,7 @@ get_header(); ?>
 										 * what author we're dealing with (if that is the case).
 										*/
 										the_post();
-										printf( __( 'Author: %s', 'ti-caresland-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
+										printf( __( 'Author: %s', 'caresland-lite' ), '<span class="vcard">' . get_the_author() . '</span>' );
 										/* Since we called the_post() above, we need to
 										 * rewind the loop back to the beginning that way
 										 * we can run the loop properly, in full.
@@ -43,31 +43,31 @@ get_header(); ?>
 										rewind_posts();
 
 									elseif ( is_day() ) :
-										printf( __( 'Day: %s', 'ti-caresland-lite' ), '<span>' . get_the_date() . '</span>' );
+										printf( __( 'Day: %s', 'caresland-lite' ), '<span>' . get_the_date() . '</span>' );
 
 									elseif ( is_month() ) :
-										printf( __( 'Month: %s', 'ti-caresland-lite' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'ti-caresland-lite' ) ) . '</span>' );
+										printf( __( 'Month: %s', 'caresland-lite' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'caresland-lite' ) ) . '</span>' );
 
 									elseif ( is_year() ) :
-										printf( __( 'Year: %s', 'ti-caresland-lite' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'ti-caresland-lite' ) ) . '</span>' );
+										printf( __( 'Year: %s', 'caresland-lite' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'caresland-lite' ) ) . '</span>' );
 
 									elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-										_e( 'Asides', 'ti-caresland-lite' );
+										_e( 'Asides', 'caresland-lite' );
 
 									elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-										_e( 'Images', 'ti-caresland-lite');
+										_e( 'Images', 'caresland-lite');
 
 									elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-										_e( 'Videos', 'ti-caresland-lite' );
+										_e( 'Videos', 'caresland-lite' );
 
 									elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-										_e( 'Quotes', 'ti-caresland-lite' );
+										_e( 'Quotes', 'caresland-lite' );
 
 									elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-										_e( 'Links', 'ti-caresland-lite' );
+										_e( 'Links', 'caresland-lite' );
 
 									else :
-										_e( 'Archives', 'ti-caresland-lite' );
+										_e( 'Archives', 'caresland-lite' );
 
 									endif;
 								?>
