@@ -17,7 +17,7 @@ get_header(); ?>
         <div class="full-content-body ">
             <div class="container">
 
-                <h1><?php _e('Blog','ti-caresland-lite'); ?></h1>
+                <h1><?php _e('Blog','caresland-lite'); ?></h1>
 
                 <div id="primary" class="blog-content-wrap">
 

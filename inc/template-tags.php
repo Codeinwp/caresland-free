@@ -24,7 +24,7 @@ function ti_caresland_lite_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'ti-caresland-lite' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'ti-caresland-lite' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'caresland-lite' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'caresland-lite' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -37,12 +37,12 @@ function ti_caresland_lite_comment( $comment, $args, $depth ) {
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
-					<?php printf( __( '%s', 'ti-caresland-lite' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s', 'caresland-lite' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div>
 				<div class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'ti-caresland-lite' ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'caresland-lite' ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
            	<?php
@@ -54,11 +54,11 @@ function ti_caresland_lite_comment( $comment, $args, $depth ) {
 					'after'     => '</div>',
 				) ) );
 			?>
-					<?php edit_comment_link( __( 'Edit', 'ti-caresland-lite' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'caresland-lite' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'ti-caresland-lite' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'caresland-lite' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -90,7 +90,7 @@ function ti_caresland_lite_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'ti-caresland-lite' ),
+	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'caresland-lite' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string

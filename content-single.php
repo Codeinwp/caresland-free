@@ -16,22 +16,22 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'ti-caresland-lite' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'caresland-lite' ),
 				'after'  => '</div>',
 			) );
 		?>
 
         <p class="post-info-single-category">
-            <?php _e('Category:','ti-caresland-lite'); ?>
+            <?php _e('Category:','caresland-lite'); ?>
             <?php
-                    echo get_the_category_list( __( ', ', 'ti-caresland-lite' ) );
+                    echo get_the_category_list( __( ', ', 'caresland-lite' ) );
             ?>
         </p>
         <p class="post-info-single-tags">
             <?php
             if( has_tag() ) {
                 echo 'Tags: ';
-                echo get_the_tag_list( '', __( ', ', 'ti-caresland-lite' ) );
+                echo get_the_tag_list( '', __( ', ', 'caresland-lite' ) );
             }
             ?>
         </p>

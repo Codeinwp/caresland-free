@@ -26,7 +26,7 @@
                             <a href="<?php the_permalink(); ?>/#comments" class="btn-box-green post-box-comm">
 								<?php comments_number( 'Comments (0)', 'Comments (1)', 'Comments (%)' ); ?>
                             </a>
-                            <a href="<?php the_permalink(); ?>" class="btn-box-orange post-box-read" title="<?php the_title(); ?>"><?php _e('Read more','ti-caresland-lite'); ?></a>
+                            <a href="<?php the_permalink(); ?>" class="btn-box-orange post-box-read" title="<?php the_title(); ?>"><?php _e('Read more','caresland-lite'); ?></a>
 
                         </article><!-- .post-box -->
 

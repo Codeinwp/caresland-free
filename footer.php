@@ -40,21 +40,21 @@
 			<div class="site-info-contact">
 
 	            <?php if (get_theme_mod('ti_caresland_lite_footer_info_email')) : ?>
-            		<p class="c-email"><a href="mailto:<?php echo get_theme_mod('ti_caresland_lite_footer_info_email'); ?>"><?php _e('Write us an Email','ti-caresland-lite'); ?></a></p>
+            		<p class="c-email"><a href="mailto:<?php echo get_theme_mod('ti_caresland_lite_footer_info_email'); ?>"><?php _e('Write us an Email','caresland-lite'); ?></a></p>
                 <?php endif; ?>
                 <?php if (get_theme_mod('ti_caresland_lite_footer_info_chat')) : ?>
-                	<p class="c-chat"><a href="<?php echo get_theme_mod('ti_caresland_lite_footer_info_chat'); ?>"><?php _e('Live Chat 24 / 7','ti-caresland-lite'); ?></a></p>
+                	<p class="c-chat"><a href="<?php echo get_theme_mod('ti_caresland_lite_footer_info_chat'); ?>"><?php _e('Live Chat 24 / 7','caresland-lite'); ?></a></p>
                 <?php endif; ?>
                 <?php if (get_theme_mod('ti_caresland_lite_info_support')) : ?>
-                	<p class="c-support"><?php _e('Support:','ti-caresland-lite'); ?> <?php echo get_theme_mod('ti_caresland_lite_info_support'); ?></p>
+                	<p class="c-support"><?php _e('Support:','caresland-lite'); ?> <?php echo get_theme_mod('ti_caresland_lite_info_support'); ?></p>
                 <?php endif; ?>
             </div>
 
             <div class="site-info">
-                <?php _e( 'Copyright &copy; ', 'ti-caresland-lite' ); ?>
+                <?php _e( 'Copyright &copy; ', 'caresland-lite' ); ?>
                 <?php echo date( 'Y' ); ?>
                 <strong> <?php bloginfo( 'name' ); ?> </strong>
-                <?php _e( '| All rights reserved.' ); ?>
+                <?php _e( '| All rights reserved.', 'caresland-lite' ); ?>
             </div><!-- .site-info -->
 			<div class="clear"></div>
 			<div class="poweredby">

@@ -18,11 +18,11 @@ get_header(); ?>
 
 					<section class="error-404 not-found">
 						<header class="page-header">
-							<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'ti-caresland-lite' ); ?></h1>
+							<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'caresland-lite' ); ?></h1>
 						</header><!-- .page-header -->
 
 						<div class="page-content">
-							<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ti-caresland-lite' ); ?></p>
+							<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'caresland-lite' ); ?></p>
 
 							<?php get_search_form(); ?>
 
