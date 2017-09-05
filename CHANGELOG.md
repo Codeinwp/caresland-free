@@ -1,4 +1,8 @@
 
+### 1.6.2 - 05/09/2017
+**Changes:** 
+- Retire notification in Customizer
+
 
 ### 1.6.0 - 07/12/2015
 
