@@ -187,8 +187,8 @@ function ti_caresland_lite_required_plugins() {
             'required'  => false,
         ),
         array(
-            'name'      => 'WP Product Review',
-            'slug'      => 'wp-product-review',
+            'name'      => 'Orbit Fox',
+            'slug'      => 'themeisle-companion',
             'required'  => false,
         ),
     
