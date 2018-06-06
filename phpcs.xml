@@ -39,6 +39,7 @@
         <exclude name="Squiz.Commenting" />
         <exclude name="Squiz.PHP.EmbeddedPhp.SpacingBeforeClose" />
         <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace" />
         <exclude name="Internal.LineEndings.Mixed" />
     </rule>
     <rule ref="WordPress-Docs">
