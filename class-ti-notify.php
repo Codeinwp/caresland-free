@@ -38,10 +38,10 @@ class Ti_Notify extends WP_Customize_Section {
 		<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
 			<h3 class="accordion-section-title">
 				<span class="section-title">
-                    <# if( data.text.length > 0 ){ #>
-                        {{{ data.text }}}
-                    <# } #>
-                </span>
+					<# if( data.text.length > 0 ){ #>
+						{{{ data.text }}}
+					<# } #>
+				</span>
 			</h3>
 		</li>
 		<?php

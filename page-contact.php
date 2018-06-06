@@ -14,111 +14,115 @@
 
 
 
-if(isset($_POST['submitted'])) {
+if (isset( $_POST['submitted'] )) {
 
-        if(trim($_POST['contactName']) === '') {
+	if (trim( $_POST['contactName'] ) === '') {
 
-               $nameError = __('Please enter your name.','caresland-lite');;
+		   $nameError = __( 'Please enter your name.','caresland-lite' );
+		;
 
-               $hasError = true;
+		   $hasError = true;
 
-        } else {
+	} else {
 
-               $name = trim($_POST['contactName']);
+		   $name = trim( $_POST['contactName'] );
 
-        }
-
-
-
-         if(trim($_POST['contactPhone']) === '') {
-
-               $phoneError = __('Please enter your phone number.','caresland-lite');;
-
-               $hasError = true;
-
-        } else {
-
-               $phone = trim($_POST['contactPhone']);
-
-        }
+	}
 
 
 
-        if(trim($_POST['email']) === '')  {
+	if (trim( $_POST['contactPhone'] ) === '') {
 
-               $emailError = __('Please enter your email address.','caresland-lite');;
+		  $phoneError = __( 'Please enter your phone number.','caresland-lite' );
+		;
 
-               $hasError = true;
+		  $hasError = true;
 
-        } else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) {
+	} else {
 
-               $emailError = __('You entered an invalid email address.','caresland-lite');
+		   $phone = trim( $_POST['contactPhone'] );
 
-               $hasError = true;
-
-        } else {
-
-               $email = trim($_POST['email']);
-
-        }
+	}
 
 
 
-        if(trim($_POST['comments']) === '') {
+	if (trim( $_POST['email'] ) === '') {
 
-               $commentError = __('Please enter a message.','caresland-lite');;
+		   $emailError = __( 'Please enter your email address.','caresland-lite' );
+		;
 
-               $hasError = true;
+		   $hasError = true;
 
-        } else {
+	} else if (!preg_match( '/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i', trim( $_POST['email'] ) )) {
 
-               if(function_exists('stripslashes')) {
+		   $emailError = __( 'You entered an invalid email address.','caresland-lite' );
 
-                       $comments = stripslashes(trim($_POST['comments']));
+		   $hasError = true;
 
-               } else {
+	} else {
 
-                       $comments = trim($_POST['comments']);
+		   $email = trim( $_POST['email'] );
 
-               }
-
-        }
-
-
-
-        if(!isset($hasError)) {
-
-               $emailTo = get_option('tz_email');
-
-               if (!isset($emailTo) || ($emailTo == '') ){
-
-                       $emailTo = get_option('admin_email');
-
-               }
+	}
 
 
 
-               $subject = '[PHP Snippets] From '.$name;
+	if (trim( $_POST['comments'] ) === '') {
+
+		   $commentError = __( 'Please enter a message.','caresland-lite' );
+		;
+
+		   $hasError = true;
+
+	} else {
+
+		if (function_exists( 'stripslashes' )) {
+
+				$comments = stripslashes( trim( $_POST['comments'] ) );
+
+		} else {
+
+				$comments = trim( $_POST['comments'] );
+
+		}
+
+	}
 
 
 
-               $body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
+	if (!isset( $hasError )) {
+
+		   $emailTo = get_option( 'tz_email' );
+
+		if (!isset( $emailTo ) || ($emailTo == '') ) {
+
+				$emailTo = get_option( 'admin_email' );
+
+		}
 
 
 
-               $headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+		   $subject = '[PHP Snippets] From ' . $name;
 
 
 
-               wp_mail($emailTo, $subject, $body, $headers);
+		   $body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
 
 
 
-               $emailSent = true;
+		   $headers = 'From: ' . $name . ' <' . $emailTo . '>' . "\r\n" . 'Reply-To: ' . $email;
 
 
 
-        }
+		   wp_mail( $emailTo, $subject, $body, $headers );
+
+
+
+		   $emailSent = true;
+
+
+
+	}
 
 
 
@@ -136,105 +140,105 @@ if(isset($_POST['submitted'])) {
 
 
 
-            <div class="container">
+			<div class="container">
 
-                <div class="line-orange"></div>
+				<div class="line-orange"></div>
 
 
 
-                <div class="content-wrap">
+				<div class="content-wrap">
 
-                    <div class="content-inside">
+					<div class="content-inside">
 
 
 
-                        <h1><?php the_title(); ?></h1>
+						<h1><?php the_title(); ?></h1>
 
 
 
-                        <div class="contact-area-left contact-area">
+						<div class="contact-area-left contact-area">
 
 
 
-                       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
 
-                       <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+					   <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
 
 
-                                      <div>
+									  <div>
 
-                                              <?php if(isset($emailSent) && $emailSent == true) { ?>
+												<?php if (isset( $emailSent ) && $emailSent == true) { ?>
 
-                                                      <div>
+													  <div>
 
-                                                             <p><?php echo __('Thanks, your email was sent successfully.','caresland-lite'); ?></p>
+															 <p><?php echo __( 'Thanks, your email was sent successfully.','caresland-lite' ); ?></p>
 
-                                                      </div>
+													  </div>
 
-                                              <?php } else { ?>
+												<?php } else { ?>
 
 
 
-                                                      <?php the_content(); ?>
+														<?php the_content(); ?>
 
 
 
-                                        <form action="<?php the_permalink(); ?>" id="contactForm" method="post">
+										<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 
 
 
-                                        	<label for="i1"><?php _e('Name*:','caresland-lite'); ?></label>
+											<label for="i1"><?php _e( 'Name*:','caresland-lite' ); ?></label>
 
 
 
-                                            <?php if($nameError != '') { ?>
+											<?php if ($nameError != '') { ?>
 
-                                                    <span><?php echo $nameError;?></span>
+													<span><?php echo $nameError;?></span>
 
-                                            <?php } ?>
+											<?php } ?>
 
 
 
-                                            <input type="text" name="contactName" id="i3" value="<?php if(isset($_POST['contactName'])) echo $_POST['contactName'];?>" />
+											<input type="text" name="contactName" id="i3" value="<?php if (isset( $_POST['contactName'] )) { echo $_POST['contactName'];}?>" />
 
 
 
-                                            <label for="i2"><?php echo __('Phone*:','caresland-lite'); ?></label>
+											<label for="i2"><?php echo __( 'Phone*:','caresland-lite' ); ?></label>
 
 
 
-                                            <?php if($phoneError != '') { ?>
+											<?php if ($phoneError != '') { ?>
 
-                                                    <span><?php echo $phoneError;?></span>
+													<span><?php echo $phoneError;?></span>
 
-                                            <?php } ?>
+											<?php } ?>
 
 
 
-                                            <input type="text" name="contactPhone" id="i2" value="<?php if(isset($_POST['contactPhone'])) echo $_POST['contactPhone'];?>" />
+											<input type="text" name="contactPhone" id="i2" value="<?php if (isset( $_POST['contactPhone'] )) { echo $_POST['contactPhone'];}?>" />
 
 
 
-                                            <label for="i3"><?php echo __('Email*:','caresland-lite'); ?></label>
+											<label for="i3"><?php echo __( 'Email*:','caresland-lite' ); ?></label>
 
 
 
-                                                <?php if($emailError != '') { ?>
+												<?php if ($emailError != '') { ?>
 
 
 
-                                                <span><?php echo $emailError;?></span>
+												<span><?php echo $emailError;?></span>
 
 
 
-                                            <?php } ?>
+											<?php } ?>
 
 
 
-                                            <input type="text" name="email" id="i3" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" />
+											<input type="text" name="email" id="i3" value="<?php if (isset( $_POST['email'] )) {  echo $_POST['email'];}?>" />
 
 
 
@@ -242,59 +246,62 @@ if(isset($_POST['submitted'])) {
 
 
 
-                                            <label for="i4"><?php echo __('Message:','caresland-lite'); ?></label>
+											<label for="i4"><?php echo __( 'Message:','caresland-lite' ); ?></label>
 
 
 
-                                            <?php if($commentError != '') { ?>
+											<?php if ($commentError != '') { ?>
 
 
 
-                                                <span><?php echo $commentError;?></span>
+												<span><?php echo $commentError;?></span>
 
 
 
-                                            <?php } ?>
+											<?php } ?>
 
 
 
-                                            <textarea name="comments" id="i4" rows="6" cols="10"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>
+											<textarea name="comments" id="i4" rows="6" cols="10">
+											<?php if (isset( $_POST['comments'] )) { if (function_exists( 'stripslashes' )) { echo stripslashes( $_POST['comments'] );
+} else { echo $_POST['comments']; } } ?></textarea>
 
 
 
-                                            <input type="submit" value="Send Message">
+											<input type="submit" value="Send Message">
 
 
 
-                                            <input type="hidden" name="submitted" id="submitted" value="true" />
+											<input type="hidden" name="submitted" id="submitted" value="true" />
 
 
 
-                                        </form>
+										</form>
 
 
 
-                               <?php } ?>
+								<?php } ?>
 
 
 
-                               </div><!-- .entry-content -->
+							   </div><!-- .entry-content -->
 
 
 
-                       </div><!-- .post -->
+					   </div><!-- .post -->
 
 
 
-                               <?php endwhile; endif; ?>
+								<?php endwhile;
+endif; ?>
 
 
 
-                        </div>
+						</div>
 
 
 
-                        <div class="contact-area-right">
+						<div class="contact-area-right">
 
 
 
@@ -302,31 +309,31 @@ if(isset($_POST['submitted'])) {
 
 
 
-                        </div><!-- .contact-area-right -->
+						</div><!-- .contact-area-right -->
 
 
 
-               </div><!-- .content-inside -->
+			   </div><!-- .content-inside -->
 
 
 
-                    <div class="botttom-box-shadow-center"></div>
+					<div class="botttom-box-shadow-center"></div>
 
-                    <div class="botttom-box-shadow-left"></div>
+					<div class="botttom-box-shadow-left"></div>
 
-                    <div class="botttom-box-shadow-right"></div>
-
-
-
-                </div><!-- .banner-wrap -->
+					<div class="botttom-box-shadow-right"></div>
 
 
 
-            </div><!-- .container -->
+				</div><!-- .banner-wrap -->
 
 
 
-        </div>
+			</div><!-- .container -->
+
+
+
+		</div>
 
 
 

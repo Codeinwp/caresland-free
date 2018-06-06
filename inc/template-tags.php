@@ -33,7 +33,7 @@ function ti_caresland_lite_comment( $comment, $args, $depth ) {
 		<div class="comment-image">
 			<?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, 60 ); } ?>
 		</div><!-- .comment-author -->
-        <div class="line-orange"></div>
+		<div class="line-orange"></div>
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
@@ -45,14 +45,18 @@ function ti_caresland_lite_comment( $comment, $args, $depth ) {
 							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'caresland-lite' ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-           	<?php
-				comment_reply_link( array_merge( $args, array(
-					'add_below' => 'div-comment',
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-					'before'    => '<div class="reply">',
-					'after'     => '</div>',
-				) ) );
+			<?php
+				comment_reply_link(
+					array_merge(
+						$args, array(
+						'add_below' => 'div-comment',
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+						'before'    => '<div class="reply">',
+						'after'     => '</div>',
+						)
+					)
+				);
 			?>
 					<?php edit_comment_link( __( 'Edit', 'caresland-lite' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-metadata -->
@@ -83,19 +87,23 @@ function ti_caresland_lite_posted_on() {
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
-	$time_string = sprintf( $time_string,
+	$time_string = sprintf(
+		$time_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'caresland-lite' ),
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+	printf(
+		__( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'caresland-lite' ),
+		sprintf(
+			'<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string
 		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+		sprintf(
+			'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
 		)
@@ -109,9 +117,11 @@ function ti_caresland_lite_posted_on() {
 function ti_caresland_lite_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
+		$all_the_cool_cats = get_categories(
+			array(
 			'hide_empty' => 1,
-		) );
+			)
+		);
 
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
@@ -136,4 +146,4 @@ function ti_caresland_lite_category_transient_flusher() {
 	delete_transient( 'all_the_cool_cats' );
 }
 add_action( 'edit_category', 'ti_caresland_lite_category_transient_flusher' );
-add_action( 'save_post',     'ti_caresland_lite_category_transient_flusher' );
+add_action( 'save_post', 'ti_caresland_lite_category_transient_flusher' );

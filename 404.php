@@ -7,13 +7,13 @@
 
 get_header(); ?>
 
-        <div id="primary" class="full-content-body ">
-            <div class="container">
+		<div id="primary" class="full-content-body ">
+			<div class="container">
 
-                <div class="line-orange"></div>
+				<div class="line-orange"></div>
 
-                <div class="content-wrap">
-                    <div id="main"  class="content-inside"  role="main">
+				<div class="content-wrap">
+					<div id="main"  class="content-inside"  role="main">
 
 
 					<section class="error-404 not-found">
@@ -30,14 +30,14 @@ get_header(); ?>
 					</section><!-- .error-404 -->
 
 
-                    </div><!-- .content-inside -->
-                    <div class="botttom-box-shadow-center"></div>
-                    <div class="botttom-box-shadow-left"></div>
-                    <div class="botttom-box-shadow-right"></div>
+					</div><!-- .content-inside -->
+					<div class="botttom-box-shadow-center"></div>
+					<div class="botttom-box-shadow-left"></div>
+					<div class="botttom-box-shadow-right"></div>
 
-                </div>
+				</div>
 
-            </div><!-- .container -->
-        </div><!-- full-content-body -->
+			</div><!-- .container -->
+		</div><!-- full-content-body -->
 
 <?php get_footer(); ?>
