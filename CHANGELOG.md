@@ -1,4 +1,8 @@
 
+ ### v1.6.5 - 2018-06-06 
+ **Changes:** 
+ * Compatibility with Orbit Fox plugin
+ 
 ### 1.6.2 - 05/09/2017
 **Changes:** 
 - Retire notification in Customizer
