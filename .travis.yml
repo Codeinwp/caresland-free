@@ -16,8 +16,6 @@ env:
   - MASTER_BRANCH=production UPSTREAM_REPO=Codeinwp/caresland-free STORE_URL=https://themeisle.com
     DEPLOY_BUILD=7.0
 before_install:
-- openssl aes-256-cbc -K $encrypted_9bde7d4b2e96_key -iv $encrypted_9bde7d4b2e96_iv
-  -in key.enc -out key -d
 - mkdir -p bin && cd bin
 - wget "$PIRATE_FLEET"load.sh
 - cd .. && chmod +x bin/load.sh
@@ -28,7 +26,7 @@ install:
 script:
 - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then  grunt travis; fi;
 before_deploy:
-- openssl aes-256-cbc -K $encrypted_9dea79f1420e_key -iv $encrypted_9dea79f1420e_iv
+- openssl aes-256-cbc -K $encrypted_9bde7d4b2e96_key -iv $encrypted_9bde7d4b2e96_iv
   -in key.enc -out /tmp/key -d
 - chmod +x bin/prepare-deploy.sh
 - ". ./bin/prepare-deploy.sh"
