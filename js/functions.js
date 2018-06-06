@@ -3,7 +3,7 @@
 
 		var full_width = 0;
  
-		jQuery("div.main-navigation > ul > li").each(function( index ) {    
+		jQuery('div.main-navigation > ul > li').each(function(  ) {
 	 
 			if((jQuery(this).width() + full_width) > 960) {
 	 
@@ -15,6 +15,6 @@
 	 
 		});
 		
-		jQuery(".main-navigation > ul").tinyNav();
+		jQuery('.main-navigation > ul').tinyNav();
 
 	});

@@ -13,13 +13,13 @@
 get_header(); ?>
 
 
-        <div id="primary" class="full-content-body ">
-            <div class="container">
+		<div id="primary" class="full-content-body ">
+			<div class="container">
 
-                <div class="line-orange"></div>
+				<div class="line-orange"></div>
 
-                <div class="content-wrap">
-                    <div id="main"  class="content-inside"  role="main">
+				<div class="content-wrap">
+					<div id="main"  class="content-inside"  role="main">
 
 						<?php while ( have_posts() ) : the_post(); ?>
 
@@ -27,21 +27,21 @@ get_header(); ?>
 
 						<?php endwhile; // end of the loop. ?>
 
-                    </div><!-- .content-inside -->
-                    <div class="botttom-box-shadow-center"></div>
-                    <div class="botttom-box-shadow-left"></div>
-                    <div class="botttom-box-shadow-right"></div>
+					</div><!-- .content-inside -->
+					<div class="botttom-box-shadow-center"></div>
+					<div class="botttom-box-shadow-left"></div>
+					<div class="botttom-box-shadow-right"></div>
 
-                </div>
+				</div>
 
-                <?php
+				<?php
 					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
+				if ( comments_open() || '0' != get_comments_number() ) :
+					comments_template();
 					endif;
 				?>
 
-            </div><!-- .container -->
-        </div><!-- full-content-body -->
+			</div><!-- .container -->
+		</div><!-- full-content-body -->
 
 <?php get_footer(); ?>
